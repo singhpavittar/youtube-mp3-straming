@@ -1,0 +1,17 @@
+html, body {
+  height: 100%;
+}
+body {
+  min-height: 100%;
+  background: black;
+  animation: colors 5s infinite linear;
+}
+@keyframes colors {
+  @for $i from 0 through 100 {
+    #{$i*1%} {
+		 $color1: hsla((($i - 1) * 3.6), 50%, 50%, 1);
+		 $color2: hsla(($i * 3.6) + 60, 50%, 50%, 1);
+      background: linear-gradient(to left,$color1, $color2);
+    }
+  }
+}
