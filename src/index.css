@@ -222,7 +222,7 @@ body {
 .music-player--banner {
   background: url("http://thecatholiccatalogue.com/wp-content/uploads/2013/05/bob-marley-photo.jpg");
   background-size: cover;
-  height: 150px;
+  height: 300px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1; }
@@ -252,7 +252,7 @@ body {
   background: #ED5483; }
 
 .progress--time {
-  color: #A9A9A9;
+  color: white;
   font-size: 10px;
   float: left; }
 

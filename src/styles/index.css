@@ -222,7 +222,7 @@ body {
 .music-player--banner {
   background: url("http://thecatholiccatalogue.com/wp-content/uploads/2013/05/bob-marley-photo.jpg");
   background-size: cover;
-  height: 150px;
+  height: 300px;
   box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
   position: relative;
   z-index: 1; }
@@ -252,7 +252,7 @@ body {
   background: #ED5483; }
 
 .progress--time {
-  color: #A9A9A9;
+  color: white;
   font-size: 10px;
   float: left; }
 
@@ -532,3 +532,39 @@ body {
     background: linear-gradient(to left, #bf404f, #bfb840); }
   100% {
     background: linear-gradient(to left, #bf4047, #bfbf40); } }
+
+.container {
+  width: 100% !important; }
+
+.cover-img {
+  object-fit: cover;
+  width: 100%; }
+
+.custom-music-player {
+  background: transparent;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 20px 88px -10px #000 !important;
+  box-shadow: 0 20px 88px -10px #000 !important;
+  overflow: hidden; }
+
+.progress {
+  height: 5px; }
+
+.col-centered {
+  float: none;
+  margin: 0 auto; }
+
+.m-5-auto {
+  margin: 5% auto; }
+
+.bg-transparent {
+  background: transparent !important; }
+
+.text-decoration-none {
+  text-decoration: none !important; }
+
+.text-white {
+  color: black !important; }
+
+.pointer {
+  cursor: pointer; }

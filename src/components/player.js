@@ -1,34 +1,78 @@
-import React from 'react';
-import '../styles/index.css'
+import React, {Component} from 'react';
+import '../styles/index.css';
+import {
+  Grid,
+  Row,
+  Col,
+  ProgressBar,
+  Accordion,
+  Panel,
+  Button
+} from 'react-bootstrap';
 
-let Player = () => {
-  return (
-    <section className="music-player">
-      <header className="music-player--banner"></header>
-      <main className="music-player--main">
-        <div className="music-player--progress">
-          <progress className="progress--progress-bar" value="43" max="100"></progress>
-          <div className="progress--time">1:37</div>
-          <div className="progress--time progress--time__end">3:52</div>
-        </div>
-        <div className="music-player--controls">
-          {/* <span className="glyphicon glyphicon-pause" aria-hidden="true"></span> */}
-          {/* <i className="fa fa-pause controls--play-button"></i> */}
-          <img src={require("../images/ic_play_arrow_white_24px.svg")} alt="play_pause" className="controls--play-button"/>
+class playercls extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+  }
+  render() {
+    return (
+      <Grid className="m-5-auto">
+        <Row className="custom-music-player m0">
+          <Col lg={12} sm={12} xs={12} md={12} className="p0">
+            <Row className="m0">
+              <Col className="p0" lg={12} sm={12} xs={12} md={12}>
+                <img className="img-responsive cover-img" src={require("../images/cover.jpg")} alt="cover image"/>
+              </Col>
+              <Col className="p0" lg={12} sm={12} xs={12} md={12}>
+                <Row className="m0">
+                  <Col className="p0" lg={12} sm={12} xs={12} md={12}>
+                    <ProgressBar className="m0" bsStyle="danger" now={80}/>
+                  </Col>
+                </Row>
+                <Row className="m0">
+                  <Col className="p0" lg={8} sm={8} xs={8} md={8}>
+                    <Col className="p0 p3" lg={3} sm={3} xs={3} md={3}>
+                      <img src={require("../images/ic_play_arrow_white_24px.svg")} alt="play_pause" className="controls--play-button pull-right"/>
+                    </Col>
+                    <Col className="p0 p3" lg={9} sm={9} xs={9} md={9}>
+                      <h1 className="m0">Song Name</h1>
+                      <p className="m0">song description</p>
+                    </Col>
+                  </Col>
+                  <Col className="p0 p3" lg={4} sm={4} xs={4} md={4}>
+                    <Col className="p0" lg={4} sm={4} xs={4} md={4}>
+                      <img src={require("../images/ic_fast_rewind_black_24px.svg")} height="40" alt="back" className="actions--back"/>
+                    </Col>
+                    <Col className="p0" lg={4} sm={4} xs={4} md={4}>
+                      <img src={require("../images/ic_fast_forward_black_24px.svg")} height="40" alt="next" className="actions--forward"/>
+                    </Col>
+                    <Col className="p0 p2" lg={4} sm={4} xs={4} md={4}>
+                      <img src={require("../images/ic_repeat_black_24px.svg")} alt="repeat" className="actions--repeat"/>
+                    </Col>
+                  </Col>
+                </Row>
+              </Col>
+            </Row>
+          </Col>
+          <Col lg={12} sm={12} xs={12} md={12} className="p0 text-center">
+            <a className="text-decoration-none text-white pointer text-uppercase text-bold" onClick={() => this.setState({
+              open: !this.state.open
+            })}>
+              playlist
+            </a>
+            <Panel className="border-none" collapsible expanded={this.state.open}>
+              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            </Panel>
+          </Col>
+        </Row>
+      </Grid>
+    );
+  }
+}
 
-          <div className="song-info">
-            <div className="song-info--title">Is This Love</div>
-            <div className="song-info--artist">Bob Marley</div>
-          </div>
-          <div className="controls--actions">
-            <img src={require("../images/ic_repeat_black_24px.svg")} alt="repeat" className="actions--repeat"/>
-            <img src={require("../images/ic_fast_rewind_black_24px.svg")} alt="back" className="actions--back"/>
-            <img src={require("../images/ic_fast_forward_black_24px.svg")} alt="next" className="actions--forward"/>
-          </div>
-        </div>
-      </main>
-    </section>
-  );
-};
-
-export default Player;
+// Player
+// playercls
+export default playercls;
