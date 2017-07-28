@@ -568,3 +568,17 @@ body {
 
 .pointer {
   cursor: pointer; }
+
+.w-80 {
+  width: 80%; }
+
+.ListGroup {
+  border-radius: 0; }
+
+.list-group-item {
+  background: transparent;
+  border-top: 1px solid black !important;
+  border-bottom: 1px solid black !important; }
+
+.panel > .panel-collapse > .list-group .list-group-item {
+  border-radius: 0 !important; }
