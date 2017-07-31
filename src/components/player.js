@@ -18,7 +18,7 @@ import {
 //   );
 // };
 
-class playercls extends Component {
+class playerCLS extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -48,7 +48,7 @@ class playercls extends Component {
                   <Col className="p0" lg={8} sm={8} xs={8} md={8}>
                     <Col className="p0 p3" lg={3} sm={3} xs={3} md={3}>
                       <img src={require("../images/ic_play_arrow_white_24px.svg")} alt="play_pause" className="controls--play-button pull-right"/>
-                      <audio controls className="player">
+                      <audio controls className="player display-none">
                         <source src={require('./AKay.mp3')}/>
                       </audio>
                     </Col>
@@ -94,4 +94,4 @@ class playercls extends Component {
 
 // Player
 // playercls
-export default playercls;
+export default playerCLS;
