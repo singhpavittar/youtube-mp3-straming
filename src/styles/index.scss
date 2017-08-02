@@ -1,17 +1,20 @@
 @import './scss/player.scss';
 @import './scss/body.scss';
+@import './scss/flip.scss';
+@import './scss/search.scss';
 
 .container {
   width: 100% !important;
 }
 
 .cover-img {
+  transition: all .5s ease;
   object-fit: cover;
   width: 100%;
 }
 
 .custom-music-player {
-  background: transparent;
+  animation: colors 5s infinite linear;
   border-radius: 15px;
   -webkit-box-shadow: 0 20px 88px -10px #000 !important;
   box-shadow: 0 20px 88px -10px #000 !important;
@@ -45,4 +48,38 @@
 
 .pointer {
   cursor: pointer;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.ListGroup {
+  border-radius: 0;
+}
+
+.list-group-item {
+  background: transparent;
+  border-top: 1px solid black !important;
+  border-bottom: 1px solid black !important;
+}
+
+.panel > .panel-collapse > .list-group .list-group-item {
+  border-radius: 0 !important;
+}
+
+.display-none {
+  display: none;
+}
+
+.width-0{
+  width:0;
+}
+
+.height-0{
+  height:0;
+}
+
+.transition-5s{
+  transition: all .5s ease;
 }

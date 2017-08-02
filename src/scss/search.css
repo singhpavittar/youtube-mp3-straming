@@ -1,0 +1,87 @@
+.temp-body {
+  width: auto !important; }
+
+.search {
+  width: 85px;
+  height: 85px;
+  margin: 0px auto 0;
+  background-color: rgba(36, 38, 40, 0.45);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease; }
+  .search.open {
+    width: 420px; }
+    .search.open:before {
+      height: 60px;
+      margin: 20px 0 20px 30px;
+      position: absolute; }
+
+.search-box {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border: 1px solid black;
+  background: transparent;
+  color: #fff;
+  padding: 20px 100px 20px 45px;
+  font-size: 40px; }
+  .search-box:focus {
+    outline: none; }
+
+.search-button {
+  width: 85px;
+  height: 85px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px;
+  cursor: pointer;
+  border: 1px solid black; }
+
+.search-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border: 3px solid white;
+  display: block;
+  position: relative;
+  margin-left: 5px;
+  transition: all 0.5s ease; }
+  .search-icon:before {
+    content: '';
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    right: -2px;
+    top: 30px;
+    display: block;
+    background-color: white;
+    transform: rotate(-45deg);
+    transition: all 0.5s ease; }
+  .search-icon:after {
+    content: '';
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    right: -12px;
+    top: 40px;
+    display: block;
+    background-color: white;
+    transform: rotate(-45deg);
+    transition: all 0.5s ease; }
+  .open .search-icon {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px; }
+    .open .search-icon:before {
+      transform: rotate(52deg);
+      right: 22px;
+      top: 23px;
+      height: 18px; }
+    .open .search-icon:after {
+      transform: rotate(-230deg);
+      right: 22px;
+      top: 13px;
+      height: 18px; }

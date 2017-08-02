@@ -8,14 +8,15 @@
     "npm-run-all": "^4.0.2",
     "react": "^15.6.1",
     "react-bootstrap": "^0.31.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "react-player": "^0.20.0"
   },
   "devDependencies": {
     "react-scripts": "1.0.10"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/styles/index.scss -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "watch-css": "npm run build-css && node-sass-chokidar src/styles/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",

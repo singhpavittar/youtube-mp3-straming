@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import '../styles/index.css';
+import '../index.css';
 import {
   Grid,
   Row,
@@ -7,15 +7,21 @@ import {
   ProgressBar,
   Accordion,
   Panel,
-  Button
+  Button,
+  ListGroup,
+  ListGroupItem
 } from 'react-bootstrap';
 
-class playercls extends Component {
+class playerCLS extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      open: false
+      open: false,
+      song: 'file:///Users/abcplusd/Desktop/reactJs/youtube-mp3-straming/src/components/AKay.mp3'
     };
+  }
+  componentDidMount() {
+    // fetch()
   }
   render() {
     return (
@@ -24,7 +30,7 @@ class playercls extends Component {
           <Col lg={12} sm={12} xs={12} md={12} className="p0">
             <Row className="m0">
               <Col className="p0" lg={12} sm={12} xs={12} md={12}>
-                <img className="img-responsive cover-img" src={require("../images/cover.jpg")} alt="cover image"/>
+                <img className={this.props.coverImage?'img-responsive cover-img height-0':'img-responsive cover-img'} src={require("../images/cover.jpg")} alt="cover image"/>
               </Col>
               <Col className="p0" lg={12} sm={12} xs={12} md={12}>
                 <Row className="m0">
@@ -36,6 +42,9 @@ class playercls extends Component {
                   <Col className="p0" lg={8} sm={8} xs={8} md={8}>
                     <Col className="p0 p3" lg={3} sm={3} xs={3} md={3}>
                       <img src={require("../images/ic_play_arrow_white_24px.svg")} alt="play_pause" className="controls--play-button pull-right"/>
+                      <audio controls className="player display-none">
+                        <source src={require('./AKay.mp3')}/>
+                      </audio>
                     </Col>
                     <Col className="p0 p3" lg={9} sm={9} xs={9} md={9}>
                       <h1 className="m0">Song Name</h1>
@@ -63,8 +72,12 @@ class playercls extends Component {
             })}>
               playlist
             </a>
-            <Panel className="border-none" collapsible expanded={this.state.open}>
-              Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+            <Panel className="border-none bg-transparent col-centered w-80" collapsible expanded={this.state.open}>
+              <ListGroup fill className="p2">
+                <ListGroupItem>Item 1</ListGroupItem>
+                <ListGroupItem>Item 2</ListGroupItem>
+                <ListGroupItem>&hellip;</ListGroupItem>
+              </ListGroup>
             </Panel>
           </Col>
         </Row>
@@ -75,4 +88,4 @@ class playercls extends Component {
 
 // Player
 // playercls
-export default playercls;
+export default playerCLS;

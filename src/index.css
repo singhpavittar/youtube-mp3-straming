@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700);
 body,
 html {
   height: 100%; }
@@ -533,15 +534,156 @@ body {
   100% {
     background: linear-gradient(to left, #bf4047, #bfbf40); } }
 
+.animation {
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.custom-container {
+  /* Set the depth of the elements */
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px; }
+
+.card {
+  position: relative;
+  /* Set the transition effects */
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: -moz-transform 0.4s;
+  -o-transition: -o-transform 0.4s;
+  transition: transform 0.4s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d; }
+
+.card.flipped {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.card .back,
+.card .front {
+  background: black !important;
+  color: black !important;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  box-shadow: 3px 5px 20px 2px rgba(0, 0, 0, 0.25); }
+
+.card .back {
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg); }
+
+.temp-body {
+  width: auto !important; }
+
+.search {
+  width: 85px;
+  height: 85px;
+  margin: 0px auto 0;
+  background-color: rgba(36, 38, 40, 0.45);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease; }
+  .search.open {
+    width: 420px; }
+    .search.open:before {
+      height: 60px;
+      margin: 20px 0 20px 30px;
+      position: absolute; }
+
+.search-box {
+  width: 100%;
+  height: 100%;
+  box-shadow: none;
+  border: 1px solid black;
+  background: transparent;
+  color: #fff;
+  padding: 20px 100px 20px 45px;
+  font-size: 40px; }
+  .search-box:focus {
+    outline: none; }
+
+.search-button {
+  width: 85px;
+  height: 85px;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px;
+  cursor: pointer;
+  border: 1px solid black; }
+
+.search-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  border: 3px solid white;
+  display: block;
+  position: relative;
+  margin-left: 5px;
+  transition: all 0.5s ease; }
+  .search-icon:before {
+    content: '';
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    right: -2px;
+    top: 30px;
+    display: block;
+    background-color: white;
+    transform: rotate(-45deg);
+    transition: all 0.5s ease; }
+  .search-icon:after {
+    content: '';
+    width: 3px;
+    height: 15px;
+    position: absolute;
+    right: -12px;
+    top: 40px;
+    display: block;
+    background-color: white;
+    transform: rotate(-45deg);
+    transition: all 0.5s ease; }
+  .open .search-icon {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px; }
+    .open .search-icon:before {
+      transform: rotate(52deg);
+      right: 22px;
+      top: 23px;
+      height: 18px; }
+    .open .search-icon:after {
+      transform: rotate(-230deg);
+      right: 22px;
+      top: 13px;
+      height: 18px; }
+
 .container {
   width: 100% !important; }
 
 .cover-img {
+  transition: all .5s ease;
   object-fit: cover;
   width: 100%; }
 
 .custom-music-player {
-  background: transparent;
+  animation: colors 5s infinite linear;
   border-radius: 15px;
   -webkit-box-shadow: 0 20px 88px -10px #000 !important;
   box-shadow: 0 20px 88px -10px #000 !important;
@@ -568,3 +710,29 @@ body {
 
 .pointer {
   cursor: pointer; }
+
+.w-80 {
+  width: 80%; }
+
+.ListGroup {
+  border-radius: 0; }
+
+.list-group-item {
+  background: transparent;
+  border-top: 1px solid black !important;
+  border-bottom: 1px solid black !important; }
+
+.panel > .panel-collapse > .list-group .list-group-item {
+  border-radius: 0 !important; }
+
+.display-none {
+  display: none; }
+
+.width-0 {
+  width: 0; }
+
+.height-0 {
+  height: 0; }
+
+.transition-5s {
+  transition: all .5s ease; }
