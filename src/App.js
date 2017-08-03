@@ -10,8 +10,9 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      flip :false,
-      coverImg:false
+      flip: false,
+      coverImg: false,
+      songUrl: 'https://youtu.be/FOh5IXJdeCI'
     }
   }
 
@@ -25,20 +26,13 @@ class App extends Component {
 
   render() {
     return (
-      // <div className="clearfix">
-      //   {/* <div className="mx-auto"> */}
-      //   <div className="sm-col-8 md-col-8 lg-col-8 mx-auto">
-      //   <Player/>
-      //   </div>
-      //   {/* </div> */}
-      // </div>
       <Grid className="clearfix">
         <Row>
           <Button ref='button' onClick={() => this.flipDone(!this.state.flip)}>
             flip</Button>
         </Row>
         <Row className="m0">
-          <Col className="p0 col-centered" lg={6} sm={8} xs={8} md={8}>
+          <Col className="p0 col-centered p-15 p-b-0" lg={6} sm={8} xs={8} md={8}>
             <Search searchOpen={this.searchOpen}/>
           </Col>
           <Col className="p0 col-centered custom-container" lg={6} sm={8} xs={8} md={8}>
@@ -46,10 +40,9 @@ class App extends Component {
               ? 'p0 col-centered card flipped'
               : 'p0 col-centered card'}>
               <div className="front">
-                <Player coverImage={this.state.coverImg}/>
+                <Player songUrl={this.state.songUrl} coverImage={this.state.coverImg}/>
               </div>
-              <div className="back">
-              </div>
+              <div className="back"></div>
             </div>
           </Col>
         </Row>
