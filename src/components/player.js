@@ -28,17 +28,18 @@ class playerCLS extends Component {
       openList: false,
       song: 'file:///Users/abcplusd/Desktop/reactJs/youtube-mp3-straming/src/components/AKay.mp3',
       play: true,
-      volume: 1.0
+      volume: 1.0,
+      url:`https://youtu.be/FOh5IXJdeCI`
     };
   }
-  componentDidMount() {
-    axios.post('http://localhost:3002/youtube', {url: this.props.songUrl}).then(data => {
-      let song = new Buffer(data.data);
-      this.setState({buffer: song});
-      console.log(this.audio.currentSrc);
-      console.log(data);
-    });
-  }
+  // componentDidMount() {
+  //   axios.post(`http://localhost:3002/youtube?url=${url}`).then(data => {
+  //     let song = new Buffer(data.data);
+  //     this.setState({buffer: song});
+  //     console.log(this.audio.currentSrc);
+  //     console.log(data);
+  //   });
+  // }
 
   onPlay = () => {
     // console.log(this.audio.networkState);
@@ -92,7 +93,7 @@ class playerCLS extends Component {
                     <Col className="p0 p3" lg={3} sm={3} xs={3} md={3}>
                       <PlayPauseControl play={this.state.play} playAudio={this.playAudio} pauseAudio={this.pauseAudio}/>
                       <audio controls ref={(element) => this.audio = element} className="player display-none">
-                        <source src={this.state.buffer}/>
+                        <source src={`http://localhost:3002/youtube?url=${this.state.url}`}/>
                       </audio>
                     </Col>
                     <Col className="p0 p3" lg={9} sm={9} xs={9} md={9}>
